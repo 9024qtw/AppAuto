@@ -1,0 +1,9 @@
+platformName: Android
+platformVersion: 7.1.2
+deviceName: xxx
+appPackage: com.gongniu.smart
+appActivity: com.thebull.MainActivity
+noRest: True
+automationName: UiAutomator2
+ip_port: http://localhost:4723/wd/hub
+
