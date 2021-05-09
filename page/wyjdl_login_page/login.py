@@ -4,7 +4,8 @@ from base.start import Start
 from selenium import webdriver
 from time import sleep
 
-class Wyjdl(BassPage):
+
+class Login(BassPage):
     # 同意按钮
     btn_agree = (By.XPATH, '//*[@text=\'同意\']')
     # 不同意按钮
@@ -18,17 +19,18 @@ class Wyjdl(BassPage):
     # 登录按钮
     btn_login = (By.XPATH, '//android.widget.TextView[@text=\'登录/注册\']')
 
-    def login(self):
+    def code_login(self, account, code):
         # if self.find(self.btn_agree):
         self.click(self.btn_agree)
-        self._input(self.enter_PhoneNumber, '13151565010')
+        self._input(self.enter_PhoneNumber, account)
         self.click(self.btn_GetCode)
-        self._input(self.enter_Code, '5010')
+        self._input(self.enter_Code, code)
         self.click(self.btn_login)
 
 
 if __name__ == '__main__':
     driver = Start.start()
-    sleep(5)
-    a = Wyjdl(driver)
-    a.login()
+    # sleep(10)
+    # a = Login(driver)
+    # a.code_login('13151565010', '5010')
+    Start.end()
